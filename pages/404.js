@@ -10,15 +10,10 @@ const NotFoundPage = () => {
 	const [count, setCount] = useState(3)
 	useEffect(() => {
 		const id = setInterval(() => {
-			setCount(count - 1)
+			count <= 0 ? router.push('/') : setCount(count - 1)
 		}, 1000)
-		return () => {
-			if (count <= 0) {
-				clearInterval(id)
-				router.push('/')
-			}
-		}
-	}, [count])
+		return () => clearInterval(id)
+	})
 	return (
 		<center className={styles.wrapper}>
 			<div>
