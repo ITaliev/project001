@@ -1,0 +1,10 @@
+@import '../_variables.scss';
+.heading {
+	margin: 3px;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 33px;
+	text-align: center;
+	user-select: none;
+	color: $color_21_21_121_05;
+}
