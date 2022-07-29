@@ -7,13 +7,14 @@ console.clear()
 
 const NotFoundPage = () => {
 	const router = useRouter()
+	const go = () => router.push('/')
 	const [count, setCount] = useState(3)
 	useEffect(() => {
 		const id = setInterval(() => {
-			count <= 0 ? router.push('/') : setCount(count - 1)
+			count <= 0 ? go() : setCount(count - 1)
 		}, 1000)
 		return () => clearInterval(id)
-	})
+	}, [count])
 	return (
 		<center className={styles.wrapper}>
 			<div>
